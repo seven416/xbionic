@@ -98,6 +98,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		final String userName = "";
 		final String password = "";
 
+		
+		
 		String url = Constant.HOST + "/passport/login";
 		DataRequest request = new DataRequest(Request.Method.POST, url,
 				new Response.Listener<String>() {
