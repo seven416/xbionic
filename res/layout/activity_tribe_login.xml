@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/peoplebackground" >
+
+    <ImageView
+        android:id="@+id/img_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_back" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:text="登录"
+        android:textColor="#cccccc"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:text="无线增值服务应用，欢迎您！"
+        android:textColor="#cccccc"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/btn_backtrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_title"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/backbtn" />
+
+    <EditText
+        android:id="@+id/et_user"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_welcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/edittext_style"
+        android:drawableStart="@drawable/personpicture"
+        android:gravity="center"
+        android:hint="用 户 名"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/et_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_style"
+        android:drawableStart="@drawable/keypicture"
+        android:gravity="center"
+        android:hint="密 码"
+        android:password="true"
+        android:textColor="#ffffff" />
+
+    <ImageButton
+        android:id="@+id/btn_login_tribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/enterpicture" />
+
+    <ImageButton
+        android:id="@+id/btn_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btn_login_tribe"
+        android:layout_below="@id/btn_login_tribe"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/passwordpicture" />
+
+</RelativeLayout>

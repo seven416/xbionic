@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/bg">
+    
+    <ImageView
+        android:id="@+id/img_enroll_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_back" />
+    
+    <ImageButton
+        android:id="@+id/btn_backtrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_title"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/backbtn" />
+    
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="注 册"
+        android:textColor="#cccccc"
+        android:textSize="25sp" />
+    
+    <ImageButton android:id="@+id/btn_sina_enroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sina_register"
+        android:layout_below="@id/img_enroll_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+    
+    <ImageButton android:id="@+id/btn_qq_enroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/qq_register"
+        android:layout_below="@id/btn_sina_enroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+    
+    
+    <ImageButton android:id="@+id/btn_phone_enroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/telephone_register"
+        android:layout_below="@id/btn_qq_enroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+    
+
+</RelativeLayout>

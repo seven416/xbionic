@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground" >
+
+    <Button
+        android:id="@+id/btn_approve_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:background="#cccccc"
+        android:text="微博认证OAUTH2.0" />
+
+    <Button
+        android:id="@+id/btn_click_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_approve_login"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/btn_approve_login"
+        android:background="#cccccc"
+        android:text="单击登录sso" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_approve_login"
+        android:layout_below="@+id/btn_approve_login"
+        android:layout_marginTop="23dp"
+        android:background="#cccccc"
+        android:text="注销" />
+
+    <TextView
+        android:id="@+id/tv_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_logout"
+        android:layout_marginTop="34dp"
+        android:textColor="#cccccc"
+        android:text="使用sso登录前，请检查手机上是否安装新浪微博客户端，目前仅3.00及以上版本支持sso；如果已安装，将自动转为OAUTH2.0进行认证" />
+
+</RelativeLayout>
