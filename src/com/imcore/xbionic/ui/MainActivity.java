@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.android.volley.AuthFailureError;
@@ -21,10 +22,10 @@ import com.imcore.xbionic.http.DataRequest;
 import com.imcore.xbionic.http.RequestQueueSingleton;
 
 public class MainActivity extends Activity implements OnClickListener {
-	private ImageButton btnTribeLogin;
-	private ImageButton btnSinaLogin;
-	private ImageButton btnQQLogin;
-	private ImageButton btnRegister;
+	private Button btnTribeLogin;
+	private Button btnSinaLogin;
+	private Button btnQQLogin;
+	private Button btnRegister;
 	private ImageButton btnHelp;
 	private ImageButton btnServer;
 
@@ -37,10 +38,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	private void initControl() {
-		btnTribeLogin = (ImageButton) findViewById(R.id.btn_tribe_login);
-		btnSinaLogin = (ImageButton) findViewById(R.id.btn_sina_login);
-		btnQQLogin = (ImageButton) findViewById(R.id.btn_qq_login);
-		btnRegister = (ImageButton) findViewById(R.id.btn_register);
+		btnTribeLogin = (Button) findViewById(R.id.btn_tribe_login);
+		btnSinaLogin = (Button) findViewById(R.id.btn_sina_login);
+		btnQQLogin = (Button) findViewById(R.id.btn_qq_login);
+		btnRegister = (Button) findViewById(R.id.btn_register);
 		btnHelp = (ImageButton) findViewById(R.id.btn_help);
 		btnServer = (ImageButton) findViewById(R.id.btn_serve);
 

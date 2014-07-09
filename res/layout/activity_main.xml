@@ -2,57 +2,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".MainActivity" >
-
-    <ImageView
-        android:id="@+id/img_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/allbackground" />
 
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logo" 
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logo" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_sina_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/sina_login" />
+        android:background="@drawable/btn_background"
+        android:text="新浪微博登录"
+        android:textColor="@color/text_color" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_qq_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_sina_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:background="@drawable/qq_login" />
+        android:background="@drawable/btn_background"
+        android:text="腾讯账号登录"
+        android:textColor="@color/text_color" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_tribe_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_qq_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:background="@drawable/login" />
+        android:background="@drawable/btn_background"
+        android:text="部落用户登录"
+        android:textColor="@color/text_color" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_tribe_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:background="@drawable/register" />
+        android:background="@drawable/btn_background"
+        android:text="新用户注册"
+        android:textColor="@color/text_color" />
 
     <ImageButton
         android:id="@+id/btn_help"
@@ -63,15 +66,15 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/help_1" />
-    
-    <ImageButton 
+
+    <ImageButton
         android:id="@+id/btn_serve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/serve_1"
         android:layout_alignParentRight="true"
         android:layout_below="@id/btn_register"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="80dp"
+        android:background="@drawable/serve_1" />
 
 </RelativeLayout>
