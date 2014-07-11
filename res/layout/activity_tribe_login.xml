@@ -32,14 +32,6 @@
         android:textColor="#cccccc"
         android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/btn_backtrack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/img_title"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/backbtn" />
-
     <EditText
         android:id="@+id/et_user"
         android:layout_width="300dp"
@@ -50,7 +42,7 @@
         android:background="@drawable/edittext_style"
         android:drawableStart="@drawable/personpicture"
         android:gravity="center"
-        android:hint="用 户 名"
+        android:text="18050119317"
         android:textColor="#ffffff" />
 
     <EditText
@@ -63,8 +55,8 @@
         android:background="@drawable/edittext_style"
         android:drawableStart="@drawable/keypicture"
         android:gravity="center"
-        android:hint="密 码"
         android:password="true"
+        android:text="seven416623"
         android:textColor="#ffffff" />
 
     <ImageButton
@@ -74,7 +66,8 @@
         android:layout_below="@id/et_password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:background="@drawable/enterpicture" />
+        android:background="@drawable/btn_tribe_login"
+        />
 
     <ImageButton
         android:id="@+id/btn_forget_password"
@@ -83,6 +76,14 @@
         android:layout_alignLeft="@id/btn_login_tribe"
         android:layout_below="@id/btn_login_tribe"
         android:layout_marginTop="20dp"
-        android:background="@drawable/passwordpicture" />
+        android:background="@drawable/btn_forget_psw" />
+
+    <ImageButton
+        android:id="@+id/btn_getback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/tv_title"
+        android:background="@drawable/btn_backtrack" />
 
 </RelativeLayout>

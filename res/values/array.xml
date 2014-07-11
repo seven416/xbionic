@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_item_array_text">
+        <item >您的收藏</item>
+        <item >账户设置</item>
+        <item >达人申请</item>
+        <item >部落社区</item>
+        <item >购物车</item>
+        <item >订阅信息</item>
+        <item >分享设置</item>
+    </string-array>
+    
+</resources>

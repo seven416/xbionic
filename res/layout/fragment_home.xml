@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_background1" >
+
+    <TextView
+        android:id="@+id/tv__home_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:text="部落平方"
+        android:background="@drawable/title_back"
+        android:textColor="@color/text_color"
+        android:gravity="center"
+        android:textSize="18sp"/>
+    
+    <ImageButton android:id="@+id/btn_listbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/listbutton"
+        android:layout_alignParentLeft="true"/>
+    
+    <ImageButton 
+        android:id="@+id/btn_seek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/seek"
+        android:layout_alignParentRight="true"/>
+    
+    <ImageView
+        android:id="@+id/iv_product_buy"
+        android:layout_width="155dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/xactivtypage_buy" />
+
+    <ImageView
+        android:id="@+id/iv_expert_story"
+        android:layout_width="155dp"
+        android:layout_height="120dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="250dp"
+        android:src="@drawable/xactivtypage_tale" />
+
+    <ImageView
+        android:id="@+id/iv_x_activity"
+        android:layout_width="155dp"
+        android:layout_height="120dp" 
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/iv_product_buy"
+        android:background="@drawable/xactivtypage_activity"
+        />
+    <ImageView
+        android:id="@+id/iv_x_introduce"
+        android:layout_width="155dp"
+        android:layout_height="120dp" 
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/iv_expert_story"
+        android:src="@drawable/xactivtypage_introduce"
+        />
+
+</RelativeLayout>
