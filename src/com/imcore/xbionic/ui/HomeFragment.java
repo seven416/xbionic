@@ -42,14 +42,14 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		
 		switch (v.getId()) {
 		case R.id.btn_listbutton:
-			//
+			
 			break;
 		case R.id.btn_seek:
 			//
 			break;
 		case R.id.iv_product_buy:
-//			Intent intent = new Intent(getActivity(),ProductMainActivity.class);
-//			startActivity(intent);
+			Intent intentBuy = new Intent(getActivity(),ProductBuyActivity.class);
+			startActivity(intentBuy);
 			break;
 		case R.id.iv_expert_story:
 			//

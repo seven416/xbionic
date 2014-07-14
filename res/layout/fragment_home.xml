@@ -17,14 +17,18 @@
     <ImageButton android:id="@+id/btn_listbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/listbutton"
+        android:background="@drawable/listbutton"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
         android:layout_alignParentLeft="true"/>
     
     <ImageButton 
         android:id="@+id/btn_seek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/seek"
+        android:background="@drawable/seek"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"/>
     
     <ImageView
