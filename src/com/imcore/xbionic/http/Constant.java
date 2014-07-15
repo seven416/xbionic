@@ -4,4 +4,5 @@ public interface Constant {
    public static final String HOST = "http://bulo2bulo.com:8080/mobile/api";
    public static final String IMAGE_HOST = "http://bulo2bulo.com:8080/";
    public static final String IMAGE_SERVER_TAIL="_L.png";
+   public static final String IMAGE_ADDRESS = "http://bulo2bulo.com";
 }
