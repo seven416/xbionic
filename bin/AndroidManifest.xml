@@ -78,6 +78,7 @@
         <activity android:name="com.imcore.xbionic.ui.ProductBuyActivity"></activity>
         <activity android:name="com.imcore.xbionic.ui.ProductListActivity"></activity>
         <activity android:name="com.imcore.xbionic.ui.ProductDetailsActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.PhoneVerifyActivity"></activity>
     </application>
 
 </manifest>

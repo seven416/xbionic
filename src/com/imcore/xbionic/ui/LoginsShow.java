@@ -55,11 +55,11 @@ public class LoginsShow extends Activity {
 						// 提交修改
 						editor.commit();
 					} else {
-//						Intent intent = new Intent(LoginsShow.this,
-//								MainActivity.class);
-						
 						Intent intent = new Intent(LoginsShow.this,
-								TribeLogin.class);
+								MainActivity.class);
+						
+//						Intent intent = new Intent(LoginsShow.this,
+//								TribeLogin.class);
 						finish();
 						startActivity(intent);
 						

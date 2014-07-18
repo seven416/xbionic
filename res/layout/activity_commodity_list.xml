@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:id="@+id/tv_title_back"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/title_back"
+            android:gravity="center"
+            android:text="商品列表"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btn_commodity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/btn_backtrack" />
+
+        <ImageButton
+            android:id="@+id/btn_commodity_search"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/seek" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gv_commodity_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/allbackground"
+        android:numColumns="3" >
+    </GridView>
+
+</LinearLayout>
