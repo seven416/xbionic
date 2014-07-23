@@ -77,8 +77,14 @@
         
         <activity android:name="com.imcore.xbionic.ui.ProductBuyActivity"></activity>
         <activity android:name="com.imcore.xbionic.ui.ProductListActivity"></activity>
-        <activity android:name="com.imcore.xbionic.ui.ProductDetailsActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.ProductDetailsActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name="com.imcore.xbionic.ui.PhoneVerifyActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.CommentActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name="com.imcore.xbionic.ui.ShoppingCartActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.ExpertStoryActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.XIntroduceActivity"></activity>
     </application>
 
 </manifest>

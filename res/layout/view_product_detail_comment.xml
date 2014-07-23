@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/tv_pro_det_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="呵呵"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_pro_det_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_pro_det_comment"
+        android:layout_below="@id/tv_pro_det_comment"
+        android:layout_marginTop="20dp"
+        android:text="用户昵称:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_pro_det_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_pro_det_user"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/tv_pro_det_user"
+        android:text="呵呵111"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_pro_det_client_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_pro_det_user_name"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="呵呵"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    
+
+</RelativeLayout>

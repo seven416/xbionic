@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allbackground"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:id="@+id/tv_expert_story_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/title_back"
+            android:gravity="center"
+            android:text="达人故事"
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btn_expert_story_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_backtrack" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_expert_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

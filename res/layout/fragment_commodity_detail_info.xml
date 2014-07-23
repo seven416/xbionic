@@ -90,13 +90,16 @@
 
         <EditText
             android:id="@+id/et_com_detail_amount"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:maxLength="5"
-            android:layout_alignBottom="@id/tv_com_detail_amount_tag"
+            android:gravity="center"
+            android:hint="0"
+            android:layout_alignBaseline="@id/tv_com_detail_amount_tag"
             android:layout_toRightOf="@id/tv_com_detail_amount_tag"
-            android:textColor="@color/text_color" />
+            android:textColor="#000000"
+            android:background="@drawable/edittext_phone_enroll" />
 
         <TextView
             android:id="@+id/tv_com_detail_amount"
@@ -108,28 +111,27 @@
             android:textColor="@color/text_color" />
 
         <Button
-            android:id="@+id/btn_add_trolley"
+            android:id="@+id/btn_buy"
             android:layout_width="70dp"
             android:layout_height="20dp"
-            android:layout_alignBaseline="@+id/btn_add_collect"
-            android:layout_alignBottom="@+id/btn_add_collect"
+            android:layout_alignBaseline="@+id/et_com_detail_amount"
             android:layout_marginRight="10dp"
             android:background="@drawable/btn_collect_trolley"
-            android:text="加入购物车"
+            android:text="立即购买"
             android:layout_alignParentRight="true"
             
             android:textColor="@color/text_color"
             android:textSize="10sp" />
 
         <Button
-            android:id="@+id/btn_add_collect"
+            android:id="@+id/btn_add_trolley"
             android:layout_width="70dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/et_com_detail_amount"
-            android:layout_marginRight="16dp"
-            android:layout_toLeftOf="@+id/btn_add_trolley"
+            android:layout_alignBaseline="@+id/et_com_detail_amount"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/btn_buy"
             android:background="@drawable/btn_collect_trolley"
-            android:text="添加收藏"
+            android:text="加入购物车"
             android:textColor="@color/text_color"
             android:textSize="10sp" />
         

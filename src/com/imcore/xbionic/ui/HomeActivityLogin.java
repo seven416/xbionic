@@ -8,6 +8,10 @@ import java.util.Map;
 import com.imcore.xbionic.R;
 import com.imcore.xbionic.util.Const;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -31,6 +35,7 @@ public class HomeActivityLogin extends FragmentActivity {
 	private String[] mNaviItemText;
 	private Fragment mHomeFragment;
 	private Fragment mHomeFragmentUser;
+	private View mDrawerView;
 
 	private final static String NAVI_ITEM_TEXT = "text";
 	private final static String NAVI_ITEM_ICON = "icon";
@@ -39,11 +44,16 @@ public class HomeActivityLogin extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home_login);
-		
+
 		initDrawerLayout();// 侧拉菜单
 		initFragment();
+
+		// 注册广播
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("ACTION_OPEN_DRAWER");
+		registerReceiver(openDrawerReceiver, intentFilter);
 	}
-	
+
 	private void initFragment() {
 		mHomeFragment = new HomeFragment();
 		mHomeFragmentUser = new HomeDrawerUser();
@@ -63,6 +73,7 @@ public class HomeActivityLogin extends FragmentActivity {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.home_login_layout);
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
 				GravityCompat.START);
+		mDrawerView = findViewById(R.id.left_drawer);
 		mNaviItemIcon = new int[] { R.drawable.ic_launcher,
 				R.drawable.ic_launcher, R.drawable.ic_launcher,
 				R.drawable.ic_launcher, R.drawable.ic_launcher,
@@ -85,6 +96,17 @@ public class HomeActivityLogin extends FragmentActivity {
 				.setOnItemClickListener(new NaviDrawerListItemOnClickListner());
 
 	}
+	
+	//接收广播
+		private BroadcastReceiver openDrawerReceiver = new BroadcastReceiver() {
+
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				if(intent.getAction().equals("ACTION_OPEN_DRAWER")){
+					mDrawerLayout.openDrawer(mDrawerView);
+				}
+			}
+		};
 
 	private class NaviDrawerListItemOnClickListner implements
 			OnItemClickListener {
@@ -121,6 +143,12 @@ public class HomeActivityLogin extends FragmentActivity {
 			//
 			break;
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		unregisterReceiver(openDrawerReceiver);
+		super.onDestroy();
 	}
 
 }

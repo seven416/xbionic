@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        
+        <TextView 
+            android:id="@+id/tv_x_introduce_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/title_back"
+            android:text="X的介绍"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            android:textSize="18sp"/>
+        
+        <ImageButton 
+            android:id="@+id/btn_x_introduce_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_backtrack"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        
+    </RelativeLayout>
+    
+   <ImageView
+        android:id="@+id/iv_history_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/histroy" />
+
+    <ImageView
+        android:id="@+id/iv_awards_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/awareimg" />
+
+    <ImageView
+        android:id="@+id/iv_prototype_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bionicprototype" />
+
+    <ImageView
+        android:id="@+id/iv_base_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/productionbase" />
+
+    <ImageView
+        android:id="@+id/iv_design_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/designanddevelopemt" />
+    
+
+</LinearLayout>

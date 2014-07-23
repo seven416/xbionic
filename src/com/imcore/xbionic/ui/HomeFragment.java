@@ -42,7 +42,8 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		
 		switch (v.getId()) {
 		case R.id.btn_listbutton:
-			
+			Intent intent = new Intent("ACTION_OPEN_DRAWER");
+			getActivity().sendBroadcast(intent);
 			break;
 		case R.id.btn_seek:
 			//
@@ -52,13 +53,15 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			startActivity(intentBuy);
 			break;
 		case R.id.iv_expert_story:
-			//
+			Intent intentStory = new Intent(getActivity(),ExpertStoryActivity.class);
+			startActivity(intentStory);
 			break;
 		case R.id.iv_x_activity:
 			//
 			break;
 		case R.id.iv_x_introduce:
-			//
+			Intent intentIntroduce = new Intent(getActivity(),XIntroduceActivity.class);
+			startActivity(intentIntroduce);
 			break;
 		}
 		
