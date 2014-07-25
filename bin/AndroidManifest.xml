@@ -85,6 +85,13 @@
         <activity android:name="com.imcore.xbionic.ui.ShoppingCartActivity"></activity>
         <activity android:name="com.imcore.xbionic.ui.ExpertStoryActivity"></activity>
         <activity android:name="com.imcore.xbionic.ui.XIntroduceActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.XIntroduceAwardsActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.XIntroducePrototypeActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.XActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.AccountResetActivity"></activity>
+        <activity android:name="com.imcore.xbionic.ui.ExpertApplyActivity"></activity>
+    	<activity android:name="com.imcore.xbionic.ui.SettleAccountsActivity"></activity>
+    	<activity android:name="com.imcore.xbionic.ui.MyCollectActivity"></activity>
     </application>
 
 </manifest>

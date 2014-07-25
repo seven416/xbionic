@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -48,7 +49,7 @@ public class FragmentProductDetailInfo extends Fragment implements
 		OnClickListener {
 	private View view;
 	private Button btnBuy, btnTrolley;
-	private TextView mTvTitle, mTvPrice, mAmount;
+	private TextView mTvTitle, mTvPrice, mAmount,mCollect;
 	private int mImgID;
 	private EditText mBuyEt;
 	private ArrayList<TextView> mSizeArray;
@@ -90,9 +91,11 @@ public class FragmentProductDetailInfo extends Fragment implements
 		mBuyEt = (EditText) view.findViewById(R.id.et_com_detail_amount);
 		btnBuy = (Button) view.findViewById(R.id.btn_buy);
 		btnTrolley = (Button) view.findViewById(R.id.btn_add_trolley);
+		mCollect = (TextView) view.findViewById(R.id.tv_com_collect);
 
 		btnBuy.setOnClickListener(this);
 		btnTrolley.setOnClickListener(this);
+		mCollect.setOnClickListener(this);
 
 	}
 
@@ -352,11 +355,14 @@ public class FragmentProductDetailInfo extends Fragment implements
 		builder.setPositiveButton("马上结算",
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
-
+						
+						Intent intentVerify = new Intent(getActivity(),SettleAccountsActivity.class);
+						startActivity(intentVerify);
 					}
 				});
 		builder.setNegativeButton("再逛逛", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
+				
 			}
 		});
 		return builder.create();
@@ -420,8 +426,163 @@ public class FragmentProductDetailInfo extends Fragment implements
 	
 	//加入购物车按钮监听方法
 	private void getAddTrolley() {
-		//
+		sumBuy = mBuyEt.getText().toString().trim();
+		if (mSelectProductSize == null) {
+			new AlertDialog.Builder(getActivity()).setMessage("请选择尺寸！")
+					.create().show();
+			return;
+		} else if (productQuantity == null || productQuantity.qty == 0) {
+			new AlertDialog.Builder(getActivity()).setTitle("太火了，已经卖光了...")
+					.create().show();
+			return;
+		} else if (sumBuy == null || sumBuy.equals("")) {
+			new AlertDialog.Builder(getActivity()).setTitle("请输入购买数量！")
+					.create().show();
+			return;
+		} else if (Integer.parseInt(sumBuy) > productQuantity.qty) {
+			new AlertDialog.Builder(getActivity()).setTitle("当前库存没那么多哦...")
+					.create().show();
+			return;
+		} else {
+			addShopngingCart();
+		}
 	}
+
+	private void addShopngingCart() {
+		SharedPreferences sp = getActivity().getSharedPreferences("loginUser",
+				Context.MODE_PRIVATE); // 私有数据
+		userId = sp.getString("userId", "");
+		token = sp.getString("token", "");
+		if (userId.equals("") || token.equals("")) {
+			new AlertDialog.Builder(getActivity())
+					.setTitle("您还未登陆，请先登陆.....")
+					.setPositiveButton("登陆",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
+									Intent intent = new Intent(getActivity(),
+											TribeLogin.class);
+									intent.putExtra(Const.LOGIN_KEY,
+											Const.LOGIN_AT_BUY_VALUE);
+									startActivity(intent);
+								}
+							}).create().show();
+			return;
+		}
+
+		String url = Constant.HOST + "/shoppingcart/update.do";
+		DataRequest request = new DataRequest(Request.Method.POST, url,
+				new Response.Listener<String>() {
+					@Override
+					public void onResponse(String response) {
+						if (response != null) {
+							showTrolleyDialog(getActivity()).show();
+						}
+					}
+				}, new Response.ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						Log.i("Error", error.getMessage());
+					}
+				}) {
+			@Override
+			protected Map<String, String> getParams() throws AuthFailureError {
+				// 在此方法中设置要提交的请求参数
+				Map<String, String> params = new HashMap<String, String>();
+				params.put("userId", userId);
+				params.put("token", token);
+				params.put("productQuantityId", productQuantity.id + "");
+				params.put("qty", sumBuy);
+				return params;
+			}
+		};
+		request.setTag(ProductDetailsActivity.class);
+		RequestQueueSingleton.getInstance(getActivity()).addToRequestQueue(
+				request);
+		
+	}
+	
+	/**
+	 * 购物车添加成功对话框
+	 */
+	private Dialog showTrolleyDialog(Context context) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage("恭喜您，已成功加入到购物车！");
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				dialog.dismiss();
+			}
+		});
+		return builder.create();
+	}
+	
+	// 加入收藏
+		private void addCollect() {
+			SharedPreferences sp = getActivity().getSharedPreferences("loginUser",
+					Context.MODE_PRIVATE); // 私有数据
+			userId = sp.getString("userId", "");
+			token = sp.getString("token", "");
+			if (userId.equals("") || token.equals("")) {
+				new AlertDialog.Builder(getActivity())
+						.setTitle("您还未登陆，请先登陆.....")
+						.setPositiveButton("登陆",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int whichButton) {
+										Intent intent = new Intent(getActivity(),
+												TribeLogin.class);
+										intent.putExtra(Const.LOGIN_KEY,
+												Const.LOGIN_AT_BUY_VALUE);
+										startActivity(intent);
+									}
+								}).create().show();
+				return;
+			}
+			String url = Constant.HOST + "/user/favorite/add.do";
+			DataRequest request = new DataRequest(Request.Method.POST, url,
+					new Response.Listener<String>() {
+						@Override
+						public void onResponse(String response) {
+							if (response != null) {
+								showCollectDialog(getActivity()).show();
+							}
+							Log.i("-----------", response);
+						}
+					}, new Response.ErrorListener() {
+						@Override
+						public void onErrorResponse(VolleyError error) {
+							Log.i("Error", error.getMessage());
+						}
+					}) {
+				@Override
+				protected Map<String, String> getParams() throws AuthFailureError {
+					// 在此方法中设置要提交的请求参数
+					Map<String, String> params = new HashMap<String, String>();
+					params.put("userId", userId);
+					params.put("token", token);
+					params.put("type", 1 + "");
+					params.put("productId", commodityDetailId + "");
+					return params;
+				}
+			};
+			request.setTag(ProductDetailsActivity.class);
+			RequestQueueSingleton.getInstance(getActivity()).addToRequestQueue(
+					request);
+		}
+		
+		/**
+		 * 收藏成功对话框
+		 */
+		private Dialog showCollectDialog(Context context) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			builder.setMessage("恭喜您，已成功添加到收藏夹！");
+			builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int whichButton) {
+					dialog.dismiss();
+				}
+			});
+			return builder.create();
+		}
 
 	@Override
 	public void onClick(View v) {
@@ -433,6 +594,14 @@ public class FragmentProductDetailInfo extends Fragment implements
 		case R.id.btn_buy:
 			getBtnBuy();
 			break;
+		}
+		
+		if(v.getId() == R.id.tv_com_collect) {
+			mCollect.setTextColor(Color.BLACK);
+			addCollect();
+			
+		} else {
+			mCollect.setTextColor(Color.WHITE);
 		}
 
 	}

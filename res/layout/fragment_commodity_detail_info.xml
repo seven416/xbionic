@@ -3,77 +3,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/productsizebackground" >
-    
-    <TextView 
-        android:id="@+id/tv_com_detail_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/titleandsizebackground"
-        android:text="标题栏"
-        android:gravity="center_vertical"
-        android:paddingLeft="5dp"
-        android:textColor="@color/text_color"/>
-    
+
     <RelativeLayout 
+        android:id="@+id/rel_com_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_com_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/titleandsizebackground"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="标题栏"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:id="@+id/tv_com_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_com_detail_title"
+            android:layout_alignBottom="@+id/tv_com_detail_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text="收 藏"
+            android:textColor="@color/text_color" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/rel_com_detail_pirce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_com_detail_title">
-        
-        <TextView 
+        android:layout_below="@id/rel_com_detail_title" >
+
+        <TextView
             android:id="@+id/tv_com_detail_price_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="售价:"
-            android:textColor="@color/text_color"
-            android:padding="10dp"/>
-        
-        <TextView 
+            android:textColor="@color/text_color" />
+
+        <TextView
             android:id="@+id/tv_com_detail_price_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/tv_com_detail_price_tag"
             android:layout_toRightOf="@id/tv_com_detail_price_tag"
             android:text="￥2000"
-            android:textColor="#DD0606"/>
-        
+            android:textColor="#DD0606" />
     </RelativeLayout>
-    
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/rel_com_detail_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@id/rel_com_detail_pirce"
         android:gravity="center_vertical"
-        android:layout_below="@id/rel_com_detail_pirce">
-        
-        <TextView 
+        android:orientation="horizontal" >
+
+        <TextView
             android:id="@+id/tv_com_detail_color_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="颜色:"
-            android:textColor="@color/text_color"
-            android:padding="10dp"/>
-        
+            android:textColor="@color/text_color" />
     </LinearLayout>
-    
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/rel_com_detail_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:layout_below="@id/rel_com_detail_color">
-        
-        <TextView 
+        android:layout_below="@id/rel_com_detail_color"
+        android:gravity="center_vertical" >
+
+        <TextView
             android:id="@+id/tv_com_detail_size_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="尺码:"
             android:padding="10dp"
-            android:textColor="@color/text_color"/>
-
+            android:text="尺码:"
+            android:textColor="@color/text_color" />
     </LinearLayout>
-    
+
     <RelativeLayout
         android:id="@+id/rel_com_detail_amount"
         android:layout_width="match_parent"
@@ -92,14 +108,14 @@
             android:id="@+id/et_com_detail_amount"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="5"
-            android:gravity="center"
-            android:hint="0"
             android:layout_alignBaseline="@id/tv_com_detail_amount_tag"
             android:layout_toRightOf="@id/tv_com_detail_amount_tag"
-            android:textColor="#000000"
-            android:background="@drawable/edittext_phone_enroll" />
+            android:background="@drawable/edittext_phone_enroll"
+            android:gravity="center"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="5"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/tv_com_detail_amount"
@@ -115,11 +131,10 @@
             android:layout_width="70dp"
             android:layout_height="20dp"
             android:layout_alignBaseline="@+id/et_com_detail_amount"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:background="@drawable/btn_collect_trolley"
             android:text="立即购买"
-            android:layout_alignParentRight="true"
-            
             android:textColor="@color/text_color"
             android:textSize="10sp" />
 
@@ -134,16 +149,16 @@
             android:text="加入购物车"
             android:textColor="@color/text_color"
             android:textSize="10sp" />
-        
     </RelativeLayout>
-    
-    <!-- <RelativeLayout android:id="@+id/rel_commodity_add_button"
+
+    <!--
+    <RelativeLayout android:id="@+id/rel_commodity_add_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rel_com_detail_amount">
       
         
-    </RelativeLayout> -->
-    
+    </RelativeLayout>
+    -->
 
 </RelativeLayout>

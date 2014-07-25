@@ -121,25 +121,28 @@ public class HomeActivityLogin extends FragmentActivity {
 	private void selectNaviItem(int position) {
 
 		switch (position) {
-		case 0:
+		case 0://您的收藏
 			//
 			break;
-		case 1:
+		case 1://账户设置
+			Intent intent2 = new Intent(HomeActivityLogin.this,AccountResetActivity.class);
+			startActivity(intent2);
+			break;
+		case 2://达人申请
+			Intent intent3 = new Intent(HomeActivityLogin.this,ExpertApplyActivity.class);
+			startActivity(intent3);
+			break;
+		case 3://部落社区
 			//
 			break;
-		case 2:
+		case 4://购物车
+			Intent intent5 = new Intent(HomeActivityLogin.this,ShoppingCartActivity.class);
+			startActivity(intent5);
+			break;
+		case 5://订阅信息
 			//
 			break;
-		case 3:
-			//
-			break;
-		case 4:
-			//
-			break;
-		case 5:
-			//
-			break;
-		case 6:
+		case 6://分享设置
 			//
 			break;
 		}

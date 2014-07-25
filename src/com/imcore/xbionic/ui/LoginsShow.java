@@ -68,7 +68,7 @@ public class LoginsShow extends Activity {
 
 				}
 
-			}, 1500);
+			}, 2000);
 		}
 	}
 	

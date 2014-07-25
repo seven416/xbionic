@@ -57,7 +57,8 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			startActivity(intentStory);
 			break;
 		case R.id.iv_x_activity:
-			//
+			Intent intentActivity = new Intent(getActivity(),XActivity.class);
+			startActivity(intentActivity);
 			break;
 		case R.id.iv_x_introduce:
 			Intent intentIntroduce = new Intent(getActivity(),XIntroduceActivity.class);

@@ -118,11 +118,15 @@ public class FragmentProductDetailDarwer extends Fragment implements
 		}
 		if (v.getId() == R.id.btn_darwer_fragment_buy) {// 购买
 			btnBuy.setTextColor(Color.MAGENTA);
+			Intent intentBuy = new Intent(getActivity(),SettleAccountsActivity.class);
+			startActivity(intentBuy);
 		} else {
 			btnBuy.setTextColor(Color.WHITE);
 		}
 		if (v.getId() == R.id.btn_darwer_fragment_collect) {// 收藏
 			btnCollect.setTextColor(Color.MAGENTA);
+			Intent intentCollect = new Intent(getActivity(),MyCollectActivity.class);
+			startActivity(intentCollect);
 		} else {
 			btnCollect.setTextColor(Color.WHITE);
 		}

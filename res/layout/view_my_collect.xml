@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+
+    <ImageView
+        android:id="@+id/iv_my_collect_img"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/test1" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_my_collect_img"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/iv_my_collect_img"
+        android:singleLine="true"
+        android:text="Title"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_color_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_my_collect_title"
+        android:layout_below="@id/tv_my_collect_title"
+        android:layout_marginTop="5dp"
+        android:text="颜色："
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_my_collect_color_detail"
+        android:layout_toRightOf="@id/tv_my_collect_color_detail"
+        android:text="白色"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_total_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_my_collect_color_detail"
+        android:layout_below="@id/tv_my_collect_color_detail"
+        android:layout_marginTop="5dp"
+        android:text="单价:"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_my_collect_total_detail"
+        android:layout_toRightOf="@id/tv_my_collect_total_detail"
+        android:text="￥2990"
+        android:textColor="#D24916" />
+
+    <RelativeLayout
+        android:id="@+id/rel_pro_shopping_qit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_my_collect_total_detail"
+        android:layout_marginRight="20dp" >
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/iv_my_collect_img"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_product_comment_dottedline" />
+
+    <ImageView
+        android:id="@+id/iv_my_collect_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/rel_pro_shopping_qit"
+        android:layout_alignTop="@+id/tv_my_collect_title"
+        android:src="@drawable/remove_icon"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_my_collect_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_my_collect_img"
+        android:layout_alignLeft="@+id/tv_my_collect_total_detail"
+        android:textColor="@android:color/white"
+        android:text="收藏时间" />
+</RelativeLayout>
